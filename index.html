@@ -40,6 +40,12 @@
 		else if (comando == 4) {
 			comandoTexto = "linguax";
 		}
+		else if (comando == 5) {
+			comandoTexto = "linguax --ajuda";
+		}
+		else if (comando == 6) {
+			comandoTexto = "linguax --texto ~/Documentos/arquivo.txt";
+		}
 		// Copiar comandoTexto para a área de transferência
 		const textarea = document.createElement("textarea");
 		textarea.value = comandoTexto;
@@ -282,10 +288,31 @@
 				<div class="col-6"><span class="image fit"><img src="./images/ajuda/img7.png" alt="" /></span></div>
 				<hr />
 				<h3>Ajuda</h3>
-				<p>Nessa seção é apresentado o Modo Simples e o Modo Comum para o usuário.</p>
+				<p>Nessa seção é apresentado a lista de idiomas e seus respectivos códigos, o Modo Simples e o Modo Comum para o usuário.</p>
 				<p>Os parâmetros disponíveis e a documentação:</p>
-				<p><kbd>-a</kbd> ou <kbd>--ajuda</kbd> ➜ Mostrar ajuda.</p>
-				<p><kbd>-t [endereço de arquivo]</kbd> ou <kbd>--texto [endereço de arquivo]</kbd> ➜ Traduzir arquivo.</p>
+
+
+				<div class="table">
+					<table class="alt">
+						<thead>
+							<tr>
+								<th>Descrição</th>
+								<th>Comando</th>
+							</tr>
+						</thead>
+						<tr>
+							<td>Mostrar ajuda ➜ <br/><b>-a</b> ou <b>--ajuda</b></td>
+							<td><kbd>linguax --ajuda</kbd>
+								<a class="copiarCod"  onclick="copiarCod(5)"><spam class="txtCopiarCod"><i id="icoIDCop5" class="fas fa-clone fa-lg icoCopiarCod"></i><spam id="copiarCodId5" class="latTextoCopiar">Copiar?</spam></a></td>
+						  </tr>
+						  <tr>
+							<td>Traduzir arquivo ➜ <br/><b>-t [endereço de arquivo]</b> ou <b>--texto [endereço de arquivo]</b></td>
+							<td><kbd>linguax --texto ~/Documentos/arquivo.txt</kbd>
+								<a class="copiarCod"  onclick="copiarCod(6)"><spam class="txtCopiarCod"><i id="icoIDCop6" class="fas fa-clone fa-lg icoCopiarCod"></i><spam id="copiarCodId6" class="latTextoCopiar">Copiar?</spam></a></td>
+						  </tr>	
+					</table>
+				</div>
+
 				<hr />
 				<h3>Informações</h3>
 				<p>Nas informações são apresentadas a versão da aplicação Linguax, além do diretório online GitHub.</p>
